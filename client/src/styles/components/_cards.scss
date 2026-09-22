@@ -1,0 +1,42 @@
+// ====================================================================
+// 3. COMPONENTS: TARJETAS Y CONTENEDORES
+// ====================================================================
+
+@use '../abstracts' as *;
+
+.card {
+  background-color: $color-bg-surface;
+  border: 1px solid $color-border-subtle;
+  border-radius: $radius-xl;
+  padding: $spacing-xl;
+  position: relative;
+  overflow: hidden;
+  box-shadow: $shadow-md;
+  transition: all $transition-normal;
+}
+
+.card-interactive {
+  &:hover {
+    border-color: $color-border-highlight;
+    transform: translateY(-4px);
+    box-shadow: $shadow-lg;
+  }
+}
+
+.card-glass {
+  @include glass-panel;
+  border-radius: $radius-xl;
+  box-shadow: $shadow-lg;
+}
+
+.card-highlight {
+  border-top: 3px solid $color-primary-gold;
+}
+
+.card-header {
+  margin-bottom: $spacing-lg;
+  
+  h3 {
+    margin-bottom: $spacing-xs;
+  }
+}

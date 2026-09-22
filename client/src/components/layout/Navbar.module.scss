@@ -1,0 +1,200 @@
+@use '@/styles/abstracts' as *;
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba($color-bg-main, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid $color-border-subtle;
+  transition: all $transition-normal;
+}
+
+.navContainer {
+  @include flex-between;
+  height: 4.75rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  text-decoration: none;
+
+  .logoBox {
+    width: 2.75rem;
+    height: 2.75rem;
+    background: linear-gradient(135deg, $color-primary-gold 0%, #d97706 100%);
+    border-radius: $radius-lg;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0f121e;
+    box-shadow: 0 4px 14px rgba($color-primary-gold, 0.35);
+  }
+
+  .brandInfo {
+    display: flex;
+    flex-direction: column;
+
+    .title {
+      font-family: $font-family-headings;
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      line-height: 1;
+
+      span {
+        color: $color-primary-gold;
+      }
+    }
+
+    .subtitle {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: $color-text-muted;
+      margin-top: 3px;
+    }
+  }
+}
+
+.navLinks {
+  display: none;
+  align-items: center;
+  gap: $spacing-xl;
+
+  @include respond-to('lg') {
+    display: flex;
+  }
+
+  .navLink {
+    font-family: $font-family-headings;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: $color-text-secondary;
+    transition: color $transition-fast;
+    position: relative;
+    padding: $spacing-xs 0;
+
+    &:hover {
+      color: $color-primary-gold;
+    }
+
+    &.active {
+      color: #ffffff;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background-color: $color-primary-gold;
+        border-radius: $radius-full;
+      }
+    }
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+}
+
+.currencySwitch {
+  display: flex;
+  align-items: center;
+  background-color: $color-bg-surface-elevated;
+  border: 1px solid $color-border-medium;
+  border-radius: $radius-full;
+  padding: 3px;
+  cursor: pointer;
+  transition: border-color $transition-fast;
+
+  &:hover {
+    border-color: rgba($color-primary-gold, 0.5);
+  }
+
+  .currencyOption {
+    padding: 0.35rem 0.65rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: $radius-full;
+    transition: all $transition-fast;
+    color: $color-text-muted;
+
+    &.activeOption {
+      background-color: $color-primary-gold;
+      color: #0f121e;
+      box-shadow: 0 2px 8px rgba($color-primary-gold, 0.3);
+    }
+  }
+}
+
+.whatsappBtn {
+  display: none;
+
+  @include respond-to('sm') {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-xs;
+    background-color: $color-whatsapp;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.875rem;
+    padding: 0.55rem 1rem;
+    border-radius: $radius-lg;
+    box-shadow: 0 4px 12px rgba($color-whatsapp, 0.25);
+    transition: all $transition-normal;
+
+    &:hover {
+      background-color: $color-whatsapp-hover;
+      transform: translateY(-2px);
+    }
+  }
+}
+
+.mobileToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  padding: $spacing-xs;
+  font-size: 1.5rem;
+
+  @include respond-to('lg') {
+    display: none;
+  }
+}
+
+.mobileMenu {
+  background-color: $color-bg-surface;
+  border-bottom: 1px solid $color-border-subtle;
+  padding: $spacing-lg;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+
+  @include respond-to('lg') {
+    display: none;
+  }
+
+  .mobileLink {
+    font-family: $font-family-headings;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: $color-text-primary;
+    padding: $spacing-sm 0;
+    border-bottom: 1px solid $color-border-subtle;
+
+    &:hover {
+      color: $color-primary-gold;
+    }
+  }
+}

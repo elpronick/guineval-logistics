@@ -1,0 +1,18 @@
+// ====================================================================
+// 1. ABSTRACTS: FUNCIONES AUXILIARES
+// ====================================================================
+
+@use 'sass:math';
+
+// Convierte píxeles a unidades rem (base 16px)
+@function rem($px) {
+  @if math.is-unitless($px) {
+    @return math.div($px, 16) * 1rem;
+  }
+  @return math.div($px, 16px) * 1rem;
+}
+
+// Opacidad de color segura
+@function alpha($color, $opacity) {
+  @return rgba($color, $opacity);
+}

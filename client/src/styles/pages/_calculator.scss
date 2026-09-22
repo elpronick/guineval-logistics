@@ -1,0 +1,26 @@
+// ====================================================================
+// 5. PAGES: VISTA DE CALCULADORA Y COTIZADOR
+// ====================================================================
+
+@use '../abstracts' as *;
+
+.calculator-results {
+  margin-top: $spacing-xl;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+}
+
+.quote-option-card {
+  border-radius: $radius-xl;
+  background-color: $color-bg-surface-elevated;
+  border: 1.5px solid $color-border-medium;
+  padding: $spacing-lg;
+  transition: all $transition-normal;
+
+  &.selected,
+  &.recommended {
+    border-color: $color-primary-gold;
+    box-shadow: 0 0 20px rgba($color-primary-gold, 0.15);
+  }
+}

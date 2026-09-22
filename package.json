@@ -1,0 +1,28 @@
+{
+  "name": "guineval-logistics",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Plataforma logística y de gestión de compras internacionales (España - Guinea Ecuatorial) para Exportaciones Guineval S.L.",
+  "scripts": {
+    "dev": "npm run dev --prefix client",
+    "dev:client": "npm run dev --prefix client",
+    "dev:server": "npm run dev --prefix server",
+    "build": "npm run build --prefix client && npm run build --prefix server",
+    "build:client": "npm run build --prefix client",
+    "build:server": "npm run build --prefix server",
+    "test": "npm test --prefix server"
+  },
+  "keywords": [
+    "logistics",
+    "tracking",
+    "react",
+    "typescript",
+    "sass-7-1",
+    "express",
+    "mysql",
+    "guinea-ecuatorial",
+    "valencia"
+  ],
+  "author": "Francisco G. Tillhet",
+  "license": "ISC"
+}

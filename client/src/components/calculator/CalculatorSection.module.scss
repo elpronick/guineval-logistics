@@ -1,0 +1,209 @@
+@use '@/styles/abstracts' as *;
+
+.calculatorContainer {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: $spacing-2xl;
+
+  .badge {
+    margin-bottom: $spacing-sm;
+  }
+
+  h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: $spacing-sm;
+  }
+
+  p {
+    color: $color-text-secondary;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+.calculatorCard {
+  background-color: $color-bg-surface;
+  border: 1px solid $color-border-subtle;
+  border-radius: $radius-2xl;
+  padding: $spacing-xl;
+  box-shadow: $shadow-lg;
+
+  @include respond-to('md') {
+    padding: $spacing-2xl;
+  }
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-lg;
+
+  @include respond-to('md') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.dimensionsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $spacing-sm;
+}
+
+.volumetricMetrics {
+  margin: $spacing-xl 0;
+  padding: $spacing-lg;
+  background-color: $color-bg-surface-elevated;
+  border-radius: $radius-xl;
+  border: 1px solid $color-border-medium;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-md;
+
+  @include respond-to('sm') {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .metricBox {
+    display: flex;
+    flex-direction: column;
+
+    .metricLabel {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      color: $color-text-muted;
+      font-weight: 600;
+    }
+
+    .metricVal {
+      font-family: $font-family-headings;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-top: 2px;
+    }
+
+    .metricSub {
+      font-size: 0.72rem;
+      color: $color-primary-gold;
+      margin-top: 2px;
+    }
+  }
+}
+
+.optionsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-lg;
+  margin-top: $spacing-xl;
+
+  @include respond-to('md') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .optionCard {
+    background-color: $color-bg-surface-elevated;
+    border: 1.5px solid $color-border-medium;
+    border-radius: $radius-xl;
+    padding: $spacing-xl;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all $transition-normal;
+    position: relative;
+
+    &:hover {
+      border-color: rgba($color-primary-gold, 0.5);
+      transform: translateY(-3px);
+    }
+
+    &.recommended {
+      border-color: $color-primary-gold;
+      box-shadow: 0 0 20px rgba($color-primary-gold, 0.12);
+
+      .recommendedTag {
+        position: absolute;
+        top: -12px;
+        right: 1.5rem;
+        background-color: $color-primary-gold;
+        color: #0f121e;
+        font-family: $font-family-headings;
+        font-weight: 800;
+        font-size: 0.72rem;
+        padding: 0.2rem 0.65rem;
+        border-radius: $radius-full;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+    }
+
+    .optionHeader {
+      display: flex;
+      align-items: center;
+      gap: $spacing-md;
+      margin-bottom: $spacing-md;
+
+      .iconWrap {
+        width: 3rem;
+        height: 3rem;
+        border-radius: $radius-lg;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba($color-primary-gold, 0.12);
+        color: $color-primary-gold;
+      }
+
+      h4 {
+        margin: 0;
+        font-size: 1.2rem;
+      }
+
+      .days {
+        font-size: 0.8rem;
+        color: $color-text-muted;
+      }
+    }
+
+    .optionDesc {
+      font-size: 0.875rem;
+      color: $color-text-secondary;
+      margin-bottom: $spacing-lg;
+      line-height: 1.5;
+    }
+
+    .pricingRow {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      padding-top: $spacing-md;
+      border-top: 1px solid $color-border-subtle;
+
+      .priceLabel {
+        font-size: 0.8rem;
+        color: $color-text-muted;
+      }
+
+      .priceAmount {
+        text-align: right;
+
+        .eur {
+          font-family: $font-family-headings;
+          font-size: 1.75rem;
+          font-weight: 800;
+          color: $color-primary-gold;
+        }
+
+        .xaf {
+          font-size: 0.85rem;
+          color: $color-text-secondary;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}

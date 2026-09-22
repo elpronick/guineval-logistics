@@ -1,0 +1,66 @@
+// ====================================================================
+// 4. LAYOUT: CABECERA Y NAVEGACIÓN
+// ====================================================================
+
+@use '../abstracts' as *;
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  background-color: rgba($color-bg-main, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid $color-border-subtle;
+  transition: all $transition-normal;
+
+  .header-inner {
+    @include flex-between;
+    height: 4.5rem;
+  }
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+
+  .logo-icon {
+    width: 2.25rem;
+    height: 2.25rem;
+    background: linear-gradient(135deg, $color-primary-gold 0%, #e59516 100%);
+    border-radius: $radius-md;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0f121e;
+    font-weight: 800;
+  }
+
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+
+    .brand-name {
+      font-family: $font-family-headings;
+      font-weight: 800;
+      font-size: 1.25rem;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      line-height: 1;
+
+      span {
+        color: $color-primary-gold;
+      }
+    }
+
+    .brand-sub {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: $color-text-muted;
+      margin-top: 2px;
+    }
+  }
+}

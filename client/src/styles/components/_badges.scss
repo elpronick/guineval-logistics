@@ -1,0 +1,55 @@
+// ====================================================================
+// 3. COMPONENTS: BADGES E INDICADORES DE ESTADO
+// ====================================================================
+
+@use '../abstracts' as *;
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-xs;
+  font-family: $font-family-headings;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.3rem 0.75rem;
+  border-radius: $radius-full;
+  line-height: 1;
+}
+
+.badge-gold {
+  background-color: rgba($color-primary-gold, 0.15);
+  color: $color-primary-gold;
+  border: 1px solid rgba($color-primary-gold, 0.3);
+}
+
+.badge-air {
+  background-color: rgba($color-accent-blue, 0.15);
+  color: #60a5fa;
+  border: 1px solid rgba($color-accent-blue, 0.3);
+}
+
+.badge-sea {
+  background-color: rgba($color-accent-cyan, 0.15);
+  color: #22d3ee;
+  border: 1px solid rgba($color-accent-cyan, 0.3);
+}
+
+.badge-success {
+  background-color: rgba($color-status-success, 0.15);
+  color: #34d399;
+  border: 1px solid rgba($color-status-success, 0.3);
+}
+
+.badge-warning {
+  background-color: rgba($color-status-warning, 0.15);
+  color: #fbbf24;
+  border: 1px solid rgba($color-status-warning, 0.3);
+}
+
+.badge-danger {
+  background-color: rgba($color-status-error, 0.15);
+  color: #f87171;
+  border: 1px solid rgba($color-status-error, 0.3);
+}

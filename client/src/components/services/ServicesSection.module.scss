@@ -1,0 +1,142 @@
+@use '@/styles/abstracts' as *;
+
+.servicesHeader {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto $spacing-2xl;
+
+  h2 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin-top: $spacing-xs;
+    margin-bottom: $spacing-sm;
+  }
+
+  p {
+    color: $color-text-secondary;
+    font-size: 1.05rem;
+  }
+}
+
+.coreGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-lg;
+  margin-bottom: $spacing-3xl;
+
+  @include respond-to('md') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond-to('lg') {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .coreCard {
+    background-color: $color-bg-surface;
+    border: 1px solid $color-border-subtle;
+    border-radius: $radius-xl;
+    padding: $spacing-xl;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all $transition-normal;
+
+    &:hover {
+      border-color: rgba($color-primary-gold, 0.5);
+      transform: translateY(-4px);
+      box-shadow: $shadow-lg;
+    }
+
+    .iconCircle {
+      width: 3.25rem;
+      height: 3.25rem;
+      border-radius: $radius-lg;
+      background-color: rgba($color-primary-gold, 0.12);
+      color: $color-primary-gold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: $spacing-md;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      margin-bottom: $spacing-xs;
+    }
+
+    p {
+      font-size: 0.9rem;
+      color: $color-text-secondary;
+      line-height: 1.5;
+    }
+  }
+}
+
+.specialtiesSection {
+  background-color: $color-bg-surface-elevated;
+  border: 1px solid $color-border-medium;
+  border-radius: $radius-2xl;
+  padding: $spacing-2xl;
+
+  .specialtiesHeader {
+    text-align: center;
+    margin-bottom: $spacing-xl;
+
+    h3 {
+      font-size: 1.75rem;
+      color: #ffffff;
+      margin-top: $spacing-xs;
+    }
+
+    p {
+      color: $color-text-secondary;
+      font-size: 0.95rem;
+    }
+  }
+
+  .specialtiesGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-md;
+
+    @include respond-to('sm') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond-to('lg') {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .specialtyItem {
+      background-color: $color-bg-surface;
+      border: 1px solid $color-border-subtle;
+      border-radius: $radius-lg;
+      padding: $spacing-md $spacing-lg;
+      display: flex;
+      align-items: center;
+      gap: $spacing-md;
+      transition: all $transition-fast;
+
+      &:hover {
+        border-color: $color-primary-gold;
+        transform: translateX(4px);
+      }
+
+      .bullet {
+        width: 10px;
+        height: 10px;
+        border-radius: $radius-full;
+        background-color: $color-primary-gold;
+        flex-shrink: 0;
+      }
+
+      span {
+        font-family: $font-family-headings;
+        font-weight: 700;
+        font-size: 0.95rem;
+        color: #ffffff;
+      }
+    }
+  }
+}

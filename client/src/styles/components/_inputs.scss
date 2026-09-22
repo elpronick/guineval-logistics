@@ -1,0 +1,97 @@
+// ====================================================================
+// 3. COMPONENTS: FORMULARIOS E INPUTS
+// ====================================================================
+
+@use '../abstracts' as *;
+
+.form-group {
+  margin-bottom: $spacing-md;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+}
+
+.form-label {
+  font-family: $font-family-headings;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: $color-text-secondary;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  background-color: $color-bg-surface-elevated;
+  border: 1px solid $color-border-medium;
+  color: $color-text-primary;
+  border-radius: $radius-lg;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  transition: all $transition-fast;
+
+  &::placeholder {
+    color: $color-text-dim;
+  }
+
+  &:focus {
+    border-color: $color-primary-gold;
+    box-shadow: 0 0 0 3px rgba($color-primary-gold, 0.2);
+    outline: none;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.form-select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f5a623' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+
+  option {
+    background-color: $color-bg-surface-elevated;
+    color: $color-text-primary;
+  }
+}
+
+.input-with-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  .input-icon {
+    position: absolute;
+    left: 1rem;
+    color: $color-text-muted;
+    pointer-events: none;
+  }
+
+  input {
+    padding-left: 2.75rem;
+  }
+}
+
+.input-suffix {
+  position: relative;
+
+  input {
+    padding-right: 2.75rem;
+  }
+
+  .suffix-label {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: $color-text-muted;
+    pointer-events: none;
+  }
+}

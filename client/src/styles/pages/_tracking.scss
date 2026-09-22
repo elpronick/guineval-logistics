@@ -1,0 +1,54 @@
+// ====================================================================
+// 5. PAGES: VISTA DE TRACKING / LÍNEA DE TIEMPO
+// ====================================================================
+
+@use '../abstracts' as *;
+
+.timeline-wrapper {
+  position: relative;
+  padding-left: 2rem;
+  margin-top: $spacing-xl;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    left: 0.75rem;
+    width: 2px;
+    background: $color-border-medium;
+  }
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: $spacing-xl;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .timeline-dot {
+    position: absolute;
+    left: -2rem;
+    top: 0.25rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: $radius-full;
+    background-color: $color-bg-surface-elevated;
+    border: 2px solid $color-primary-gold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+
+    &.completed {
+      background-color: $color-primary-gold;
+      color: #0f121e;
+    }
+
+    &.active {
+      box-shadow: 0 0 0 4px rgba($color-primary-gold, 0.25);
+    }
+  }
+}

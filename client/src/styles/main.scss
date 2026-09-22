@@ -1,0 +1,33 @@
+// ====================================================================
+// ARQUITECTURA SASS 7-1: EXPORTACIONES GUINEVAL S.L.
+// ====================================================================
+
+// 1. Abstracts (Variables, Funciones, Mixins)
+@use 'abstracts' as *;
+
+// 2. Base (Reset, Tipografía, Estilos Globales)
+@use 'base/reset';
+@use 'base/typography';
+@use 'base/base';
+
+// 3. Components (Botones, Tarjetas, Inputs, Badges)
+@use 'components/buttons';
+@use 'components/cards';
+@use 'components/inputs';
+@use 'components/badges';
+
+// 4. Layout (Rejilla, Cabecera, Pie)
+@use 'layout/grid';
+@use 'layout/header';
+@use 'layout/footer';
+
+// 5. Pages (Home, Tracking, Calculadora)
+@use 'pages/home';
+@use 'pages/tracking';
+@use 'pages/calculator';
+
+// 6. Themes (Tema Corporativo)
+@use 'themes/theme-corporate';
+
+// 7. Vendors (Ajustes de Terceros)
+@use 'vendors/vendors';

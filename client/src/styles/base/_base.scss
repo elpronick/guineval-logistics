@@ -1,0 +1,37 @@
+// ====================================================================
+// 2. BASE: ESTILOS GENERALES
+// ====================================================================
+
+@use '../abstracts' as *;
+
+body {
+  background-color: $color-bg-main;
+  overflow-x: hidden;
+  position: relative;
+}
+
+// Selección de texto personalizada
+::selection {
+  background-color: rgba($color-primary-gold, 0.35);
+  color: #ffffff;
+}
+
+// Scrollbars personalizados para modo oscuro
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: $color-bg-main;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $color-bg-surface-elevated;
+  border-radius: $radius-full;
+  border: 2px solid $color-bg-main;
+
+  &:hover {
+    background: $color-primary-gold;
+  }
+}

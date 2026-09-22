@@ -1,0 +1,66 @@
+// ====================================================================
+// 1. ABSTRACTS: MIXINS REUTILIZABLES
+// ====================================================================
+
+@use 'variables' as *;
+
+// Mixin para Media Queries Responsive
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == 'xs' {
+    @media (min-width: $breakpoint-xs) { @content; }
+  } @else if $breakpoint == 'sm' {
+    @media (min-width: $breakpoint-sm) { @content; }
+  } @else if $breakpoint == 'md' {
+    @media (min-width: $breakpoint-md) { @content; }
+  } @else if $breakpoint == 'lg' {
+    @media (min-width: $breakpoint-lg) { @content; }
+  } @else if $breakpoint == 'xl' {
+    @media (min-width: $breakpoint-xl) { @content; }
+  } @else if $breakpoint == '2xl' {
+    @media (min-width: $breakpoint-2xl) { @content; }
+  } @else {
+    @media (min-width: $breakpoint) { @content; }
+  }
+}
+
+// Helpers de Flexbox
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// Efecto Glassmorphism Premium
+@mixin glass-panel($bg: rgba(24, 29, 54, 0.75), $blur: 16px) {
+  background: $bg;
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+  border: 1px solid $color-border-subtle;
+}
+
+// Truncar texto con puntos suspensivos
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Gradiente corporativo Guineval
+@mixin gradient-gold {
+  background: linear-gradient(135deg, #f5a623 0%, #e59516 100%);
+}
+
+@mixin gradient-hero {
+  background: radial-gradient(circle at 50% 20%, rgba(32, 39, 71, 0.6) 0%, rgba(18, 21, 38, 1) 80%);
+}

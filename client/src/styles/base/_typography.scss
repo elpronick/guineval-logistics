@@ -1,0 +1,77 @@
+// ====================================================================
+// 2. BASE: TIPOGRAFÍA CORPORATIVA
+// ====================================================================
+
+@use '../abstracts' as *;
+
+body {
+  font-family: $font-family-body;
+  color: $color-text-primary;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-headings;
+  font-weight: 700;
+  color: $color-text-primary;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: 2.25rem;
+  font-weight: 800;
+
+  @include respond-to('md') {
+    font-size: 3.25rem;
+  }
+}
+
+h2 {
+  font-size: 1.75rem;
+
+  @include respond-to('md') {
+    font-size: 2.25rem;
+  }
+}
+
+h3 {
+  font-size: 1.35rem;
+
+  @include respond-to('md') {
+    font-size: 1.6rem;
+  }
+}
+
+h4 {
+  font-size: 1.15rem;
+}
+
+p {
+  color: $color-text-secondary;
+  line-height: 1.6;
+}
+
+.text-lead {
+  font-size: 1.15rem;
+  color: $color-text-secondary;
+  line-height: 1.7;
+
+  @include respond-to('md') {
+    font-size: 1.25rem;
+  }
+}
+
+.text-gold {
+  color: $color-primary-gold;
+}
+
+.text-muted {
+  color: $color-text-muted;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}

@@ -1,0 +1,136 @@
+@use '@/styles/abstracts' as *;
+
+.header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto $spacing-2xl;
+
+  h2 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin-top: $spacing-xs;
+    margin-bottom: $spacing-sm;
+  }
+
+  p {
+    color: $color-text-secondary;
+    font-size: 1.05rem;
+  }
+}
+
+.warehousesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-lg;
+
+  @include respond-to('lg') {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .warehouseCard {
+    background-color: $color-bg-surface;
+    border: 1px solid $color-border-subtle;
+    border-radius: $radius-2xl;
+    padding: $spacing-xl;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all $transition-normal;
+
+    &:hover {
+      border-color: rgba($color-primary-gold, 0.4);
+      transform: translateY(-4px);
+      box-shadow: $shadow-lg;
+    }
+
+    &.originCard {
+      border-top: 4px solid $color-primary-gold;
+    }
+
+    .cardTop {
+      .badgeRow {
+        @include flex-between;
+        margin-bottom: $spacing-md;
+      }
+
+      h3 {
+        font-size: 1.35rem;
+        margin-bottom: $spacing-xs;
+      }
+
+      .citySub {
+        font-size: 0.85rem;
+        color: $color-primary-gold;
+        font-weight: 600;
+        margin-bottom: $spacing-lg;
+      }
+
+      .infoList {
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-md;
+
+        .infoItem {
+          display: flex;
+          align-items: flex-start;
+          gap: $spacing-sm;
+          font-size: 0.9rem;
+          color: $color-text-secondary;
+
+          svg {
+            color: $color-primary-gold;
+            flex-shrink: 0;
+            margin-top: 2px;
+          }
+
+          a {
+            color: $color-text-secondary;
+            transition: color $transition-fast;
+
+            &:hover {
+              color: $color-primary-gold;
+            }
+          }
+        }
+      }
+    }
+
+    .cardActions {
+      margin-top: $spacing-xl;
+      padding-top: $spacing-lg;
+      border-top: 1px solid $color-border-subtle;
+    }
+  }
+}
+
+.casilleroBox {
+  margin-top: $spacing-3xl;
+  background: linear-gradient(135deg, rgba(32, 39, 71, 0.8) 0%, rgba(18, 21, 38, 0.9) 100%);
+  border: 1.5px dashed rgba($color-primary-gold, 0.5);
+  border-radius: $radius-2xl;
+  padding: $spacing-2xl;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+
+  @include respond-to('md') {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .casilleroInfo {
+    h3 {
+      font-size: 1.4rem;
+      color: #ffffff;
+      margin-bottom: $spacing-xs;
+    }
+
+    p {
+      color: $color-text-secondary;
+      font-size: 0.95rem;
+      max-width: 620px;
+      line-height: 1.5;
+    }
+  }
+}

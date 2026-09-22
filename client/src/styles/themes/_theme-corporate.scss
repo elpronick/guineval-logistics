@@ -1,0 +1,16 @@
+// ====================================================================
+// 6. THEMES: TEMA CORPORATIVO GUINEVAL
+// ====================================================================
+
+@use '../abstracts' as *;
+
+:root {
+  --guineval-bg: #{$color-bg-main};
+  --guineval-surface: #{$color-bg-surface};
+  --guineval-surface-elevated: #{$color-bg-surface-elevated};
+  --guineval-gold: #{$color-primary-gold};
+  --guineval-gold-hover: #{$color-primary-gold-hover};
+  --guineval-text: #{$color-text-primary};
+  --guineval-text-muted: #{$color-text-muted};
+  --guineval-border: #{$color-border-medium};
+}

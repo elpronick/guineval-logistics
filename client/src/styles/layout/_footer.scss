@@ -1,0 +1,24 @@
+// ====================================================================
+// 4. LAYOUT: PIE DE PÁGINA
+// ====================================================================
+
+@use '../abstracts' as *;
+
+.site-footer {
+  background-color: $color-bg-surface-subtle;
+  border-top: 1px solid $color-border-subtle;
+  padding-top: $spacing-3xl;
+  padding-bottom: $spacing-xl;
+  margin-top: $spacing-3xl;
+
+  .footer-bottom {
+    margin-top: $spacing-2xl;
+    padding-top: $spacing-lg;
+    border-top: 1px solid $color-border-subtle;
+    @include flex-between;
+    flex-wrap: wrap;
+    gap: $spacing-md;
+    color: $color-text-dim;
+    font-size: 0.875rem;
+  }
+}

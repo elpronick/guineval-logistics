@@ -1,0 +1,76 @@
+// ====================================================================
+// 1. ABSTRACTS: VARIABLES GLOBALES (Tokens de diseño)
+// ====================================================================
+
+// Colores Corporativos - Exportaciones Guineval S.L.
+$color-bg-main: #121526;        // Azul naval muy profundo (fondo principal)
+$color-bg-surface: #181d36;     // Azul marino oscuro para tarjetas y contenedores
+$color-bg-surface-elevated: #202747; // Elevación para hovers y modales
+$color-bg-surface-subtle: #141930;
+
+$color-primary-gold: #f5a623;   // Dorado / Ámbar oficial
+$color-primary-gold-hover: #e59516;
+$color-primary-gold-light: rgba(245, 166, 35, 0.12);
+
+$color-accent-blue: #3b82f6;    // Azul aéreo express
+$color-accent-cyan: #06b6d4;    // Cian marítimo / contenedor
+$color-whatsapp: #25d366;       // Verde oficial WhatsApp
+$color-whatsapp-hover: #20ba59;
+
+// Tipografía y Textos
+$color-text-primary: #ffffff;
+$color-text-secondary: #cbd5e1;  // Gris azulado claro
+$color-text-muted: #94a3b8;      // Texto secundario / leyendas
+$color-text-dim: #64748b;
+
+// Estados de Feedback
+$color-status-success: #10b981;
+$color-status-warning: #f59e0b;
+$color-status-error: #ef4444;
+$color-status-info: #0284c7;
+
+// Bordes y Divisores
+$color-border-subtle: rgba(255, 255, 255, 0.08);
+$color-border-medium: #2a335a;
+$color-border-highlight: rgba(245, 166, 35, 0.35);
+
+// Fuentes
+$font-family-headings: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+$font-family-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+$font-family-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+
+// Espaciados
+$spacing-xs: 0.25rem; // 4px
+$spacing-sm: 0.5rem;  // 8px
+$spacing-md: 1rem;    // 16px
+$spacing-lg: 1.5rem;  // 24px
+$spacing-xl: 2rem;    // 32px
+$spacing-2xl: 3rem;   // 48px
+$spacing-3xl: 4.5rem; // 72px
+
+// Radios de Borde
+$radius-sm: 0.375rem; // 6px
+$radius-md: 0.5rem;   // 8px
+$radius-lg: 0.75rem;  // 12px
+$radius-xl: 1rem;     // 16px
+$radius-2xl: 1.5rem;  // 24px
+$radius-full: 9999px;
+
+// Sombras
+$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.25), 0 2px 4px -1px rgba(0, 0, 0, 0.15);
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+$shadow-gold: 0 10px 25px -5px rgba(245, 166, 35, 0.3);
+
+// Breakpoints Responsive
+$breakpoint-xs: 480px;
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+$breakpoint-2xl: 1536px;
+
+// Transiciones
+$transition-fast: 0.15s ease;
+$transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-slow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);

@@ -1,0 +1,43 @@
+// ====================================================================
+// 5. PAGES: HOME / LANDING PAGE
+// ====================================================================
+
+@use '../abstracts' as *;
+
+.hero-section {
+  position: relative;
+  padding-top: $spacing-2xl;
+  padding-bottom: $spacing-3xl;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 450px;
+    background: radial-gradient(circle, rgba($color-primary-gold, 0.08) 0%, rgba(20, 23, 41, 0) 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+}
+
+.service-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: $radius-xl;
+  background-color: $color-bg-surface;
+  border: 1px solid $color-border-subtle;
+  padding: $spacing-xl;
+  transition: all $transition-normal;
+
+  &:hover {
+    border-color: rgba($color-primary-gold, 0.4);
+    transform: translateY(-4px);
+    box-shadow: $shadow-lg;
+  }
+}

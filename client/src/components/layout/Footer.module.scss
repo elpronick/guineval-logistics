@@ -1,0 +1,109 @@
+@use '@/styles/abstracts' as *;
+
+.footer {
+  background-color: $color-bg-surface-subtle;
+  border-top: 1px solid $color-border-subtle;
+  padding-top: $spacing-3xl;
+  padding-bottom: $spacing-xl;
+  margin-top: $spacing-3xl;
+}
+
+.footerGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-2xl;
+
+  @include respond-to('md') {
+    grid-template-columns: 2fr 1fr 1.5fr;
+  }
+}
+
+.companyCol {
+  p {
+    margin-top: $spacing-md;
+    color: $color-text-secondary;
+    font-size: 0.95rem;
+    max-width: 380px;
+    line-height: 1.6;
+  }
+
+  .tagline {
+    margin-top: $spacing-md;
+    font-size: 0.85rem;
+    color: $color-primary-gold;
+    font-weight: 600;
+  }
+}
+
+.navCol {
+  h4 {
+    margin-bottom: $spacing-lg;
+    color: #ffffff;
+    font-size: 1.1rem;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+
+    button {
+      color: $color-text-muted;
+      font-size: 0.9rem;
+      text-align: left;
+      transition: color $transition-fast;
+
+      &:hover {
+        color: $color-primary-gold;
+      }
+    }
+  }
+}
+
+.contactCol {
+  h4 {
+    margin-bottom: $spacing-lg;
+    color: #ffffff;
+    font-size: 1.1rem;
+  }
+
+  .contactList {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+
+    .contactItem {
+      display: flex;
+      align-items: flex-start;
+      gap: $spacing-sm;
+      font-size: 0.9rem;
+      color: $color-text-secondary;
+
+      svg {
+        color: $color-primary-gold;
+        flex-shrink: 0;
+        margin-top: 3px;
+      }
+
+      a {
+        color: $color-text-secondary;
+        transition: color $transition-fast;
+
+        &:hover {
+          color: $color-primary-gold;
+        }
+      }
+    }
+  }
+}
+
+.bottomBar {
+  margin-top: $spacing-3xl;
+  padding-top: $spacing-lg;
+  border-top: 1px solid $color-border-subtle;
+  @include flex-between;
+  flex-wrap: wrap;
+  gap: $spacing-md;
+  color: $color-text-dim;
+  font-size: 0.85rem;
+}

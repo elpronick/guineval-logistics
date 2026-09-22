@@ -1,5 +1,7 @@
 # Guineval Logistics | Plataforma de Paquetería y Compras Internacionales
 
+[![CI - Integración Continua](https://github.com/elpronick/guineval-logistics/actions/workflows/ci.yml/badge.svg)](https://github.com/elpronick/guineval-logistics/actions/workflows/ci.yml)
+[![Deploy to GitHub Pages](https://github.com/elpronick/guineval-logistics/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/elpronick/guineval-logistics/actions/workflows/deploy-pages.yml)
 ![React](https://img.shields.io/badge/React_19-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
@@ -7,6 +9,8 @@
 ![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
 ![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL_8.0-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+
+🌐 **Demo en Vivo:** [https://elpronick.github.io/guineval-logistics/](https://elpronick.github.io/guineval-logistics/)
 
 Plataforma integral orientada a digitalizar y optimizar las operaciones de transporte logístico, cotización de tarifas y compras por encargo (Personal Shopper) entre **España (Sede Central en Silla, Valencia)** y **Guinea Ecuatorial (Malabo y Bata)** para la empresa **Exportaciones Guineval S.L.**
 

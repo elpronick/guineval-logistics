@@ -1,0 +1,60 @@
+name: CI - Integración Continua
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  # Job 1: Verificación y Pruebas del Backend (Node.js + Express + TypeScript)
+  server-check:
+    name: Backend (Express + TypeScript)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js 20.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+          cache: 'npm'
+          cache-dependency-path: 'server/package-lock.json'
+
+      - name: Instalar dependencias del servidor
+        run: npm ci
+        working-directory: ./server
+
+      - name: Compilación estricta TypeScript (tsc)
+        run: npm run build
+        working-directory: ./server
+
+      - name: Ejecutar pruebas automáticas de la API
+        run: npm test
+        working-directory: ./server
+
+  # Job 2: Verificación y Compilación del Frontend (React + Vite + SASS)
+  client-check:
+    name: Frontend (React + Vite + SASS 7-1)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js 20.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+          cache: 'npm'
+          cache-dependency-path: 'client/package-lock.json'
+
+      - name: Instalar dependencias del cliente
+        run: npm ci
+        working-directory: ./client
+
+      - name: Compilación del bundle de producción (tsc + vite build)
+        run: npm run build
+        working-directory: ./client

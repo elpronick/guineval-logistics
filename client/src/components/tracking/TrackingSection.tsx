@@ -180,7 +180,10 @@ export const TrackingSection: React.FC = () => {
               </div>
               <div className={styles.detailBox}>
                 <div className={styles.detailLabel}>Peso / Medidas</div>
-                <div className={styles.detailVal}>{shipment.weight_kg} kg ({shipment.length_cm}x{shipment.width_cm}x{shipment.height_cm} cm)</div>
+                <div className={styles.detailVal}>
+                  <span>{shipment.weight_kg} kg</span> <br />
+                  <span>({shipment.length_cm}x{shipment.width_cm}x{shipment.height_cm} cm)</span>
+                </div>
               </div>
               <div className={styles.detailBox}>
                 <div className={styles.detailLabel}>Fecha Estimada</div>

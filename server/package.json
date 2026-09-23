@@ -7,7 +7,8 @@
     "dev": "tsx watch src/index.ts",
     "build": "tsc",
     "start": "node dist/index.js",
-    "test": "tsx src/test-server.ts"
+    "test": "tsx src/test-server.ts",
+    "db:init": "tsx src/database/init-db.ts"
   },
   "keywords": [
     "logistics",

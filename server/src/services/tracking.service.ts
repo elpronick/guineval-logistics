@@ -26,17 +26,31 @@ export class TrackingService {
         throw new AppError(`No se encontró ningún envío con el número de seguimiento "${cleanCode}"`, 404);
       }
 
-      const shipment: Shipment = shipments[0];
+      const row = shipments[0];
 
       // 2. Consultar el historial cronológico de eventos
       const [events]: any = await pool.query(
         `SELECT * FROM tracking_events 
          WHERE shipment_id = ? 
          ORDER BY event_timestamp ASC`,
-        [shipment.id]
+        [row.id]
       );
 
-      shipment.timeline = Array.isArray(events) ? events : [];
+      const shipment: Shipment = {
+        ...row,
+        weight_kg: Number(row.weight_kg),
+        length_cm: Number(row.length_cm),
+        width_cm: Number(row.width_cm),
+        height_cm: Number(row.height_cm),
+        volumetric_weight_kg: Number(row.volumetric_weight_kg),
+        chargeable_weight_kg: Number(row.chargeable_weight_kg),
+        volume_m3: Number(row.volume_m3),
+        declared_value_eur: Number(row.declared_value_eur),
+        cost_eur: Number(row.cost_eur),
+        cost_xaf: Number(row.cost_xaf),
+        timeline: Array.isArray(events) ? events : [],
+      };
+
       return shipment;
     } catch (error: any) {
       if (error instanceof AppError) throw error;

@@ -11,7 +11,12 @@ export class WarehouseService {
         'SELECT * FROM warehouses WHERE is_active = TRUE ORDER BY is_origin DESC, id ASC'
       );
       if (Array.isArray(rows) && rows.length > 0) {
-        return rows;
+        return rows.map((w: any) => ({
+          ...w,
+          is_origin: Boolean(w.is_origin),
+          is_destination: Boolean(w.is_destination),
+          is_active: Boolean(w.is_active),
+        }));
       }
     } catch {
       // Fallback estático con datos oficiales en caso de que MySQL no esté iniciado

@@ -86,23 +86,28 @@ INSERT INTO shipments (
 ON DUPLICATE KEY UPDATE tracking_number=VALUES(tracking_number);
 
 -- 5. Eventos de Tracking Cronológicos
-INSERT INTO tracking_events (shipment_id, status, location, description, operator_notes, event_timestamp) VALUES
+INSERT INTO tracking_events (id, shipment_id, status, location, description, operator_notes, event_timestamp) VALUES
 -- Envío 1 (Aéreo Valencia -> Malabo)
-(1, 'REGISTERED', 'Silla, Valencia (España)', 'Expedición creada en sistema con destino Malabo (Bioko).', 'Recepción de orden', DATE_SUB(NOW(), INTERVAL 2 DAY)),
-(1, 'RECEIVED_ORIGIN', 'Sede Central Silla (Valencia)', 'Mercancía recepcionada en Av. de la Séquia Real del Xúquer, 72. Pesaje verificado.', 'Peso comprobado 4.5kg', DATE_SUB(NOW(), INTERVAL 1 DAY)),
-(1, 'IN_TRANSIT', 'Aeropuerto de Valencia (VLC)', 'Embarcado en conexión regular de carga aérea con destino Malabo (SSG).', 'Valija aérea #VLC-SSG-04', NOW()),
+(1, 1, 'REGISTERED', 'Silla, Valencia (España)', 'Expedición creada en sistema con destino Malabo (Bioko).', 'Recepción de orden', DATE_SUB(NOW(), INTERVAL 2 DAY)),
+(2, 1, 'RECEIVED_ORIGIN', 'Sede Central Silla (Valencia)', 'Mercancía recepcionada en Av. de la Séquia Real del Xúquer, 72. Pesaje verificado.', 'Peso comprobado 4.5kg', DATE_SUB(NOW(), INTERVAL 1 DAY)),
+(3, 1, 'IN_TRANSIT', 'Aeropuerto de Valencia (VLC)', 'Embarcado en conexión regular de carga aérea con destino Malabo (SSG).', 'Valija aérea #VLC-SSG-04', NOW()),
 
 -- Envío 2 (Marítimo grupaje Valencia -> Bata)
-(2, 'REGISTERED', 'Silla, Valencia (España)', 'Orden de transporte marítimo en grupaje compartida generada hacia Bata.', 'Carga en muelle', DATE_SUB(NOW(), INTERVAL 3 DAY)),
-(2, 'RECEIVED_ORIGIN', 'Sede Central Silla (Valencia)', 'Material de construcción recibido y asegurado en almacén para consolidación en contenedor.', 'Contenedor #VLC-2026-09', DATE_SUB(NOW(), INTERVAL 1 DAY)),
+(4, 2, 'REGISTERED', 'Silla, Valencia (España)', 'Orden de transporte marítimo en grupaje compartida generada hacia Bata.', 'Carga en muelle', DATE_SUB(NOW(), INTERVAL 3 DAY)),
+(5, 2, 'RECEIVED_ORIGIN', 'Sede Central Silla (Valencia)', 'Material de construcción recibido y asegurado en almacén para consolidación en contenedor.', 'Contenedor #VLC-2026-09', DATE_SUB(NOW(), INTERVAL 1 DAY)),
 
 -- Envío 3 (Listo para retirar en Malabo)
-(3, 'REGISTERED', 'Silla, Valencia (España)', 'Paquete de compra por encargo recepcionado en sede central.', 'Comprado por Guineval', DATE_SUB(NOW(), INTERVAL 5 DAY)),
-(3, 'RECEIVED_ORIGIN', 'Sede Central Silla (Valencia)', 'Clasificado para valija aérea express hacia Guinea Ecuatorial.', 'Bolsa valija #102', DATE_SUB(NOW(), INTERVAL 4 DAY)),
-(3, 'IN_TRANSIT', 'En vuelo regular de carga', 'En tránsito aéreo hacia el Aeropuerto de Malabo (SSG).', 'Vuelo directo', DATE_SUB(NOW(), INTERVAL 3 DAY)),
-(3, 'CUSTOMS_HOLD', 'Aduana Aeropuerto Malabo (SSG)', 'Despacho aduanero completado sin incidencias.', 'Liberado por agente aduanero', DATE_SUB(NOW(), INTERVAL 1 DAY)),
-(3, 'ARRIVED_DESTINATION', 'Centro Logístico Guineval Malabo', 'Recepcionado en sede de Malabo y clasificado en estantería A-03.', 'Ubicado', DATE_SUB(NOW(), INTERVAL 6 HOUR)),
-(3, 'READY_FOR_PICKUP', 'Centro Logístico Guineval Malabo', 'Paquete disponible para entrega en mostrador. Notificación de aviso enviada a WhatsApp.', 'Notificado', NOW());
+(6, 3, 'REGISTERED', 'Silla, Valencia (España)', 'Paquete de compra por encargo recepcionado en sede central.', 'Comprado por Guineval', DATE_SUB(NOW(), INTERVAL 5 DAY)),
+(7, 3, 'RECEIVED_ORIGIN', 'Sede Central Silla (Valencia)', 'Clasificado para valija aérea express hacia Guinea Ecuatorial.', 'Bolsa valija #102', DATE_SUB(NOW(), INTERVAL 4 DAY)),
+(8, 3, 'IN_TRANSIT', 'En vuelo regular de carga', 'En tránsito aéreo hacia el Aeropuerto de Malabo (SSG).', 'Vuelo directo', DATE_SUB(NOW(), INTERVAL 3 DAY)),
+(9, 3, 'CUSTOMS_HOLD', 'Aduana Aeropuerto Malabo (SSG)', 'Despacho aduanero completado sin incidencias.', 'Liberado por agente aduanero', DATE_SUB(NOW(), INTERVAL 1 DAY)),
+(10, 3, 'ARRIVED_DESTINATION', 'Centro Logístico Guineval Malabo', 'Recepcionado en sede de Malabo y clasificado en estantería A-03.', 'Ubicado', DATE_SUB(NOW(), INTERVAL 6 HOUR)),
+(11, 3, 'READY_FOR_PICKUP', 'Centro Logístico Guineval Malabo', 'Paquete disponible para entrega en mostrador. Notificación de aviso enviada a WhatsApp.', 'Notificado', NOW())
+ON DUPLICATE KEY UPDATE 
+    status=VALUES(status),
+    location=VALUES(location),
+    description=VALUES(description),
+    operator_notes=VALUES(operator_notes);
 
 -- 6. Solicitud de Compra Asistida (Personal Shopper)
 INSERT INTO purchase_requests (

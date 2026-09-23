@@ -1,5 +1,6 @@
 import app from './app';
 import http from 'http';
+import { pool } from './config/database';
 
 async function runTests() {
   const server = http.createServer(app);
@@ -71,6 +72,8 @@ async function runTests() {
     console.log('\n🎉 ¡Todos los endpoints del backend funcionan a la perfección!');
   } finally {
     server.close();
+    await pool.end();
+    process.exit(0);
   }
 }
 

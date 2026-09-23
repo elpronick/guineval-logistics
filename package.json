@@ -10,7 +10,8 @@
     "build": "npm run build --prefix client && npm run build --prefix server",
     "build:client": "npm run build --prefix client",
     "build:server": "npm run build --prefix server",
-    "test": "npm test --prefix server"
+    "test": "npm test --prefix server",
+    "db:init": "npm run db:init --prefix server"
   },
   "keywords": [
     "logistics",

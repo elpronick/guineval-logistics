@@ -69,8 +69,8 @@ export const ServicesSection: React.FC = () => {
         <div className={styles.specialtiesSection}>
           <div className={styles.specialtiesHeader}>
             <span className="badge badge-gold">Alta Capacidad Técnica</span>
-            <h3>Especialistas En</h3>
-            <p>Gestionamos cargas complejas que otras agencias no pueden transportar.</p>
+            <h3>Especialistas en:</h3>
+            <p>Gestionar cargas complejas que otras agencias no pueden transportar.</p>
           </div>
 
           <div className={styles.specialtiesGrid}>

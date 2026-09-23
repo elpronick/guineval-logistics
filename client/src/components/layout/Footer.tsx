@@ -94,7 +94,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
         {/* Barra Inferior de Copyright */}
         <div className={styles.bottomBar}>
           <span>© {new Date().getFullYear()} Exportaciones Guineval S.L. Todos los derechos reservados.</span>
-          <span>Plataforma Digital de Paquetería y Tracking España ⇄ Guinea Ecuatorial</span>
+          <span>Plataforma Digital de Paquetería y Tracking, España ⇄ Guinea Ecuatorial</span>
         </div>
       </div>
     </footer>

@@ -65,7 +65,7 @@ export const App: React.FC = () => {
             display: 'flex',
             alignItems: 'center',
             gap: '8px',
-            boxShadow: '0 8px 24px rgba(37, 211, 102, 0.4)',
+            boxShadow: '0 8px 24px rgba(37, 211, 102, 0.25)',
             fontFamily: 'Outfit, sans-serif',
             fontWeight: 700,
             fontSize: '0.95rem',

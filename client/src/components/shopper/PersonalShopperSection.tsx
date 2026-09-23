@@ -201,7 +201,7 @@ export const PersonalShopperSection: React.FC = () => {
                 </div>
 
                 <div className="form-group">
-                  <label className="form-label">Cantidad</label>
+                  <label className="form-label">Cantidad de Unidades</label>
                   <input
                     type="number"
                     min="1"

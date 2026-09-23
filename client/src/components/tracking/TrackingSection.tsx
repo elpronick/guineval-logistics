@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Search, Plane, Ship, CheckCircle2, Clock, MapPin, MessageCircle, AlertCircle } from 'lucide-react';
 import { ApiService } from '@/services/api';
 import type { Shipment, TrackingEvent } from '@/types';
@@ -6,16 +6,11 @@ import { useCurrency } from '@/context/CurrencyContext';
 import styles from './TrackingSection.module.scss';
 
 export const TrackingSection: React.FC = () => {
-  const [trackingCode, setTrackingCode] = useState('GNV-ES-2026-001');
+  const [trackingCode, setTrackingCode] = useState('');
   const [shipment, setShipment] = useState<Shipment | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const { formatPrice } = useCurrency();
-
-  // Buscar automáticamente el envío inicial al montar
-  useEffect(() => {
-    handleSearch('GNV-ES-2026-001');
-  }, []);
 
   const handleSearch = async (codeToSearch?: string) => {
     const code = (codeToSearch || trackingCode).trim();
@@ -27,7 +22,9 @@ export const TrackingSection: React.FC = () => {
     try {
       const data = await ApiService.getTracking(code);
       setShipment(data);
-      setTrackingCode(code);
+      if (codeToSearch) {
+        setTrackingCode(codeToSearch);
+      }
     } catch (err: any) {
       setError(err.message || 'No se pudo localizar el envío');
       setShipment(null);
